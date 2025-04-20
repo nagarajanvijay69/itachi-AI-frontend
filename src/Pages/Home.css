@@ -1,0 +1,63 @@
+.home{
+     max-height: 100dvh;
+     max-width: 100dvw;
+     overflow: hidden;
+     box-sizing: border-box;
+}
+
+.home .home-element{
+     display: flex;
+     height: 100%;
+     width: 100%;
+}
+
+.home .home-element .info-bar{
+     height: 100dvh;
+     width: 100dvw;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     .info-1{
+          margin-top: 120px;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .title-1, .title-2{
+               font-size: 30px;
+               margin-top: 10px;
+          }
+     }
+
+     .info-2{
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          top: 10%;
+
+          .title{
+               font-size: 25px;
+          }
+          button{
+               margin: 10px 0px;
+               border-radius: 5px;
+               color: white;
+               background-color: green;
+               height: 25px;
+               border: none;
+               height: 30px;
+               width: 70px;
+          }
+     }
+
+     img{
+          height: 180px;
+          width: 180px;
+          border-radius: 50%;
+     }
+}

@@ -1,0 +1,22 @@
+.navbar{
+     width: 100dvw;
+     height: 60px;
+     background-color: #141313;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     position: sticky;
+     img{
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+     }
+     .text{
+          margin-left: 60px;
+          font-size: 20px;
+          text-decoration: none;
+          color: white;
+          cursor: pointer;
+     }
+}
