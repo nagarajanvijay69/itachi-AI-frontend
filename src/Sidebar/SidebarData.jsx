@@ -34,7 +34,7 @@ const SidebarData = () => {
     // console.log('sidebar', SidebarPrompt);
     // console.log('flush',newtemp);
     try {
-      const res = await axios.put('http://localhost:5000/update', {
+      const res = await axios.put('https://itachi-ai-backend.onrender.com/update', {
         user: User,
         updatedChats: promptvalue
       }
@@ -49,7 +49,7 @@ const SidebarData = () => {
   const fetch = async (allprompt) => {
     try {
       const userId = User._id;
-      allprompt = await axios.post('http://localhost:5000/getdata', {
+      allprompt = await axios.post('https://itachi-ai-backend.onrender.com/getdata', {
         id: userId
       })
       // console.log('allPrompt : ',allprompt.data.userdata.userPrompt);

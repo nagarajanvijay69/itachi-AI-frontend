@@ -58,7 +58,7 @@ const Chatdata = () => {
 
 
     try {
-      const response = await axios.post('http://localhost:5000/message', {
+      const response = await axios.post('https://itachi-ai-backend.onrender.com/message', {
         prompt: tempvalue
       }, {
         headers: {
@@ -74,7 +74,7 @@ const Chatdata = () => {
       if(boolean == 1) return;
 
       try {
-        const response = await axios.put('http://localhost:5000/updatedata', {
+        const response = await axios.put('https://itachi-ai-backend.onrender.com/updatedata', {
           user: User,
           userPrompt: tempvalue
         })

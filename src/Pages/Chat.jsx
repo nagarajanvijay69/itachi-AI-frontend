@@ -55,7 +55,7 @@ const Chat = () => {
     
 
     try {
-      const response = await axios.post('http://localhost:5000/message', {
+      const response = await axios.post('https://itachi-ai-backend.onrender.com/message', {
         prompt: tempvalue
       }, {
         headers: {
