@@ -4,7 +4,21 @@ import Navbar from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
 import { Link, NavLink} from 'react-router-dom'
 import Login from './Login'
+
+
 const Home = () => {
+
+    const initreq = async ()=>{
+        const response = await fetch('https://itachi-ai-backend.onrender.com/init', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        // const data = await response.json();
+        // console.log(data);
+    }
+
   return (
      <div className="home">
         <Navbar />
