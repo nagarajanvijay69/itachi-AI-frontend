@@ -26,7 +26,7 @@ const Login = () => {
         
 
         try {
-             response = await axios.post('https://itachi-ai-backend.onrender.com/login', {
+             response = await axios.post('https://itachi-idb9.onrender.com/login', {
               email: tempEmail,
               password: tempPassword
            })

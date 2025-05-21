@@ -40,7 +40,7 @@ const Signup = () => {
 
       
       try {
-        const response = await axios.post('https://itachi-ai-backend.onrender.com/signup', {
+        const response = await axios.post('https://itachi-idb9.onrender.com/signup', {
           name: tempName,
           email: tempEmail,
           password: tempPassword

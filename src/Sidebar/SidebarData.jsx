@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './Sidebar.css'
 import { useSelector, useStore } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Context } from '../Pages/Context';
 import axios from 'axios';
@@ -34,7 +33,7 @@ const SidebarData = () => {
     // console.log('sidebar', SidebarPrompt);
     // console.log('flush',newtemp);
     try {
-      const res = await axios.put('https://itachi-ai-backend.onrender.com/update', {
+      const res = await axios.put('https://itachi-idb9.onrender.com/update', {
         user: User,
         updatedChats: promptvalue
       }
@@ -49,7 +48,7 @@ const SidebarData = () => {
   const fetch = async (allprompt) => {
     try {
       const userId = User._id;
-      allprompt = await axios.post('https://itachi-ai-backend.onrender.com/getdata', {
+      allprompt = await axios.post('https://itachi-idb9.onrender.com/getdata', {
         id: userId
       })
       // console.log('allPrompt : ',allprompt.data.userdata.userPrompt);
