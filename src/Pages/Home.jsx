@@ -1,14 +1,33 @@
 import React from 'react'
 import './Home.css'
 import Navbar from '../Navbar/Navbar'
-import Sidebar from '../Sidebar/Sidebar'
 import { Link, NavLink} from 'react-router-dom'
-import Login from './Login'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import Load from './Load'
 
 
 const Home = () => {
+    const [Loading, setLoading] = useState(true);
+
+    const InitMessage = () =>{
+      const messages = axios.get('https://itachi-idb9.onrender.com')
+      messages.then((res) => {
+        console.log(res.data);
+        setLoading(false);
+      }).catch((err) => {
+        console.error("Error fetching initial message:", err);
+      }); 
+    }
+
+    useEffect(() => {
+      InitMessage();
+    }, []);
+
 
   return (
+    <>
+      {Loading ? <Load /> : 
      <div className="home">
         <Navbar />
         <div className="home-element">
@@ -28,6 +47,8 @@ const Home = () => {
           </div>
         </div>
      </div>
+}
+    </>
   )
 }
 
