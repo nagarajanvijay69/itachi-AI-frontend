@@ -1,4 +1,4 @@
-.root{
+.root {
      box-sizing: border-box;
      overflow: hidden;
      height: 100dvh;
@@ -6,14 +6,14 @@
      max-width: 100dvw;
 }
 
-.chat{
+.chat {
      box-sizing: border-box;
      display: flex;
      width: 100%;
      height: 100%;
 }
 
-.root .chat .chat-container{
+.root .chat .chat-container {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -23,7 +23,7 @@
      box-sizing: border-box;
 }
 
-.root .chat .chat-container .one{
+.root .chat .chat-container .one {
      flex-wrap: wrap;
      max-width: 100%;
      width: 100%;
@@ -43,15 +43,15 @@
 }
 
 
-.chat .chat-container .title{
+.chat .chat-container .title {
      font-size: 1.7em;
 }
 
-.chat .chat-container .one .title-3{
+.chat .chat-container .one .title-3 {
      margin-top: 40px;
 }
 
-.chat .chat-container .two{
+.chat .chat-container .two {
      position: relative;
      top: -80px;
      width: 100%;
@@ -61,13 +61,15 @@
      display: flex;
      border-radius: 10px;
      gap: 5px;
-     img{
+
+     img {
           position: relative;
           bottom: 5px;
           height: 50px;
           margin-right: 20px;
      }
-     input{
+
+     input {
           margin-left: 20px;
           width: 100%;
           border: none;
@@ -77,22 +79,23 @@
           text-align: center;
           border-style: none;
      }
+
      input:focus,
      textarea:focus,
-     select:focus{
+     select:focus {
           outline: none;
           border: none;
           box-shadow: none;
      }
 }
 
-.hide-data{
+.hide-data {
      display: none;
      cursor: none;
 }
 
 
-.root .chat .chat-container .one .chats{
+.root .chat .chat-container .one .chats {
      margin-top: 10px;
      margin-bottom: 10px;
      height: 85dvh;
@@ -100,12 +103,14 @@
      overflow-y: scroll;
      scrollbar-width: none;
      scroll-behavior: smooth;
-     img{
+
+     img {
           height: 40px;
           width: 40px;
           margin-bottom: auto;
      }
-     .chat-user{
+
+     .chat-user {
           margin: 10px 25px;
           display: flex;
           justify-content: flex-end;
@@ -115,7 +120,7 @@
           text-align: left;
      }
 
-     .chat-ai{
+     .chat-ai {
           height: auto;
           max-height: 80%;
           margin: 10px 25px;
@@ -128,13 +133,13 @@
           scroll-behavior: smooth;
      }
 
-     .text{
+     .text {
           margin-top: 13px;
           margin-left: 60px;
      }
 
-     .text-res{
-          margin-top: 25px;
+     .text-res {
+          margin-top: 15px;
           overflow-x: hidden;
           height: auto;
           overflow-y: scroll;
@@ -144,73 +149,98 @@
 
 }
 
-.text-res span{
+.text-res span {
      opacity: 0;
      animation: fade 1.5s forwards;
 }
 
 @keyframes fade {
-     to{
+     to {
           opacity: 1;
      }
 }
 
-.loading span{
+.loading span {
      animation: loading 1.5s infinite alternate;
 }
 
-.loading span:nth-child(1){
+.loading span:nth-child(1) {
      animation-delay: 0.1s;
 }
 
-.loading span:nth-child(2){
+.loading span:nth-child(2) {
      animation-delay: 0.2s;
 }
 
-.loading span:nth-child(3){
+.loading span:nth-child(3) {
      animation-delay: 0.3s;
 }
 
-.loading span:nth-child(4){
+.loading span:nth-child(4) {
      animation-delay: 0.4s;
 }
 
-.loading span:nth-child(5){
+.loading span:nth-child(5) {
      animation-delay: 0.5s;
 }
 
-.loading span:nth-child(6){
+.loading span:nth-child(6) {
      animation-delay: 0.6s;
 }
 
-.loading span:nth-child(7){
+.loading span:nth-child(7) {
      animation-delay: 0.7s;
 }
 
-.loading span:nth-child(8){
+.loading span:nth-child(8) {
      animation-delay: 0.8s;
 }
 
-.loading span:nth-child(9){
+.loading span:nth-child(9) {
      animation-delay: 0.9s;
 }
 
-.loading span:nth-child(10){
+.loading span:nth-child(10) {
      animation-delay: 0.10s;
 }
 
 @keyframes loading {
-     0%{
+     0% {
           opacity: 1;
      }
-     100%{
+
+     100% {
           opacity: 0;
      }
 }
 
 @media (max-width: 768px) {
-     .text-res{
-          height: 80dvh
-          
+     .text-res {
+          height: 80dvh;
+          width: 90%;
+          display: flex;
+          flex-wrap: wrap;
      }
+}
+
+.markdown pre {
+     background-color: #282727;
+     color: #ffffff;
+     font-size: 15px;
+     line-height: 1.5;
+     border-radius: 15px;
+}
+
+.markdown code {
+     display: flex;
+     flex-wrap: wrap;
+     width: 50%;
+     border-radius: 15px;
+     background-color: #282727;
+     color: #ffffff;
+}
+
+.markdown pre code{
+     background-color: transparent;
+     color: inherit;
 }
