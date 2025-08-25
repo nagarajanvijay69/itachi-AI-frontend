@@ -149,6 +149,11 @@
 
 }
 
+.loading{
+     position: relative;
+     top: 10px;
+}
+
 .text-res span {
      opacity: 0;
      animation: fade 1.5s forwards;
@@ -223,15 +228,15 @@
      }
 }
 
-.markdown pre {
+/* .markdown pre {
      background-color: #282727;
      color: #ffffff;
      font-size: 15px;
      line-height: 1.5;
      border-radius: 15px;
-}
+} */
 
-.markdown code {
+/* .markdown code {
      display: flex;
      flex-wrap: wrap;
      width: 50%;
@@ -243,4 +248,4 @@
 .markdown pre code{
      background-color: transparent;
      color: inherit;
-}
+} */
