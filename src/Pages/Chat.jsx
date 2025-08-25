@@ -113,7 +113,7 @@ const Chat = () => {
 
                   : <div>
                     <div className="text-res markdown">{
-                      <span style={{ animationDelay: '0.3s' }}>{PerfectRes}</span>
+                      <span style={{ animationDelay: '0.2s' }}>{PerfectRes}</span>
 
                     }</div>
                   </div>
