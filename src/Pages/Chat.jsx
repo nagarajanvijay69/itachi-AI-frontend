@@ -24,6 +24,7 @@ const Chat = () => {
    rehypePlugins={[rehypeHighlight]}
    remarkPlugins={[remarkGfm]}
    >{showres}</ReactMarkdown>;
+  //  console.log(PerfectRes);
   // .split('**').map((item, index) => {
   //     const innerParts = item.split('*').map((subItem, subIndex) => {
   //         if (subIndex % 2 === 0) {
@@ -113,7 +114,7 @@ const Chat = () => {
 
                   : <div>
                     <div className="text-res markdown">{
-                      <span style={{ animationDelay: '0.2s',
+                      <span className='bg-code' style={{ animationDelay: '0.2s',
                                      
                        }}>{PerfectRes}</span>
                     }</div>

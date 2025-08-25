@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { adddatachat, addtempAI, addtempuser } from '../Redux/Slice'
 import { Context } from './Context'
 import { useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeHighlight from 'rehype-highlight'
 
 const Chatdata = () => {
   const [Value, setValue] = useState('');
@@ -22,25 +25,10 @@ const Chatdata = () => {
   const showres = tempAI
 
 
-  var PerfectRes = showres.split('**').map((item, index) => {
-    const innerParts = item.split('*').map((subItem, subIndex) => {
-      if (subIndex % 2 === 0) {
-        return <span key={`sub-${index}-${subIndex}`}>{subItem}</span>;
-      } else {
-        return <span key={`sub-${index}-${subIndex}`}>{subItem} <br /></span>;
-      }
-    });
-
-    if (index % 2 === 0) {
-      return <span key={`main-${index}`}>{innerParts}</span>;
-    } else {
-      return (
-        <span key={`main-${index}`}>
-          <br /><b>{innerParts}</b><br />
-        </span>
-      );
-    }
-  });
+  var PerfectRes = <ReactMarkdown
+    rehypePlugins={[rehypeHighlight]}
+    remarkPlugins={[remarkGfm]}
+  >{showres}</ReactMarkdown>;
 
 
 
@@ -48,7 +36,6 @@ const Chatdata = () => {
     if (!Value.trim()) return;
     setBool(true);
     setLoading(true);
-
     dispatch(addtempuser(Value));
     dispatch(adddatachat(Value));
 
@@ -71,7 +58,7 @@ const Chatdata = () => {
 
       setLoading(false);
 
-      if(boolean == 1) return;
+      if (boolean == 1) return;
 
       try {
         const response = await axios.put('https://itachi-idb9.onrender.com/updatedata', {
@@ -100,7 +87,7 @@ const Chatdata = () => {
         <div className='root'>
           <Navbar />
           <div className="chat">
-            < Context.Provider value={{ sendrequest,}}>
+            < Context.Provider value={{ sendrequest, }}>
               <SidebarData />
             </Context.Provider>
             <div className='chat-container'>
@@ -128,7 +115,7 @@ const Chatdata = () => {
 
                       : <div>
                         <div className="text-res">{
-                          <span style={{ animationDelay: '0.3s' }}>{PerfectRes}</span>
+                          <span className='temp-class' style={{ animationDelay: '0.3s' }}>{PerfectRes}</span>
 
                         }</div>
                       </div>
@@ -144,7 +131,7 @@ const Chatdata = () => {
                 <input type="text" placeholder='Enter your prompt....' onChange={(e) => setValue(e.target.value)} value={Value}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
-                      sendrequest(Value,0);
+                      sendrequest(Value, 0);
                     }
                   }} />
                 <img src="send.svg" onClick={() => sendrequest(Value)} />

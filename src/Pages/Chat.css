@@ -140,7 +140,7 @@
 
      .text-res {
           margin-top: 15px;
-          overflow-x: hidden;
+          overflow-x: scroll;
           height: auto;
           overflow-y: scroll;
           scroll-behavior: smooth;
@@ -222,11 +222,12 @@
 @media (max-width: 768px) {
      .text-res {
           height: 80dvh;
-          width: 90%;
+          /* width: 90%; */
           display: flex;
           flex-wrap: wrap;
      }
 }
+
 
 /* .markdown pre {
      background-color: #282727;
@@ -248,4 +249,8 @@
 .markdown pre code{
      background-color: transparent;
      color: inherit;
+} */
+
+/* .bg-code pre code {
+     background-color: tomato;
 } */
