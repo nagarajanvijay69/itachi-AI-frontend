@@ -9,8 +9,6 @@ import { Context } from './Context'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
-// import "highlight.js/styles/";
-
 
 const Chat = () => {
   const [Value, setValue] = useState('');
@@ -21,7 +19,6 @@ const Chat = () => {
   const showPrompt = userPrompts.length > 0 ? userPrompts[userPrompts.length - 1] : '';
   var resPrompts = useSelector((state) => state.prompt.resPrompts);
   const showres = resPrompts.length > 0 ? resPrompts[resPrompts.length - 1] : '';
-
 
   var PerfectRes = <ReactMarkdown
    rehypePlugins={[rehypeHighlight]}
